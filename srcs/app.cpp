@@ -122,6 +122,7 @@ bool App::onEventLoop()
 		mPanel.Clear();
 		mPlayer.Clear();
 		mComputer.Clear();
+		mCompThink.Clear();
 	} else {
 		++mTurnCnt;
 	}
