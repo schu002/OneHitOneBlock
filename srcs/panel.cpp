@@ -1,5 +1,6 @@
 #include <DxLib.h>
 #include "panel.h"
+#include "sound.h"
 #include "util.h"
 
 namespace {
@@ -138,25 +139,31 @@ bool NumberPanel::OnBtnClicked(ButtonIdx btn)
 	const uint red = GetColor(255, 0, 0);
 	if (btn >= 0 && btn <= 9) {
 		if (mNums[mCurIdx] == btn) return false;
+		Sound::Play(L_Sound_Button);
 		mNums[mCurIdx] = btn;
 		if (mCurIdx < 3) mCurIdx++;
 	} else if (btn == L_Button_Clear) {
+		Sound::Play(L_Sound_Button);
 		Reset();
 	} else if (btn == L_Button_Auto) {
+		Sound::Play(L_Sound_Button);
 		mNums = Util::GetRandomNumber();
 	} else if (btn == L_Button_OK) {
 		if (mNums.isDuplicate()) {
+			Sound::Play(L_Sound_Blip);
 			SetFontSize(24);
 			const uint red = GetColor(255, 0, 0);
 			DrawString(180, 50, "“¯‚¶”Žš‚ªŽg‚í‚ê‚Ä‚¢‚Ü‚·", red);
 			ScreenFlip();
 			return false;
 		} else if (!mNums.isValid()) {
+			Sound::Play(L_Sound_Blip);
 			SetFontSize(24);
 			DrawString(250, 50, "–¢“ü—Í‚Å‚·", red);
 			ScreenFlip();
 			return false;
 		} else {
+			Sound::Play(L_Sound_Button);
 			return true;
 		}
 	} else {

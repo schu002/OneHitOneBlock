@@ -1,6 +1,7 @@
 #include <ctime>
 #include <DxLib.h>
 #include "app.h"
+#include "sound.h"
 #include "util.h"
 
 #define MAX_TURN	12	// Å‘åƒ^[ƒ“”
@@ -15,9 +16,12 @@ void drawLast(bool ret1, bool ret2)
 	string str;
 	if (ret1 && !ret2) {
 		str = "‚ ‚È‚½‚ÌŸ‚¿‚Å‚·";
+		Sound::Play(L_Sound_Win);
 	} else if (!ret1 && ret2) {
 		str = "‚ ‚È‚½‚Ì•‰‚¯‚Å‚·";
+		Sound::Play(L_Sound_Lose);
 	} else {
+		Sound::Play(L_Sound_Draw);
 		str = "ˆø‚«•ª‚¯‚Å‚·";
 	}
 
@@ -45,6 +49,7 @@ void drawLast(bool ret1, bool ret2)
 		Sleep(120);
 	}
 
+	Sound::Stop();
 	Util::DrawFill(zone, 3);
 }
 
@@ -74,10 +79,12 @@ App::App()
    mPlayer(Zone(20, 80, 120, 450)), mComputer(Zone(560, 80, 620, 450), true),
    mCompThink(mComputer)
 {
+	Sound::New();
 }
 
 App::~App()
 {
+	Sound::Destroy();
 }
 
 void App::init()
@@ -113,6 +120,7 @@ bool App::onEventLoop()
 	redraw();
 	Number compNums = mCompThink.Think();
 	bool ret2 = mComputer.Add(compNums);
+	Sound::Play(L_Sound_Turn);
 	mCompTurn = false;
 
 	if (ret1 || ret2 || mTurnCnt == MAX_TURN) { // Ÿ•‰‚ª‚Â‚¢‚½

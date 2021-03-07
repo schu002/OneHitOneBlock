@@ -166,6 +166,7 @@
     <ClCompile Include="srcs\main.cpp" />
     <ClCompile Include="srcs\number.cpp" />
     <ClCompile Include="srcs\panel.cpp" />
+    <ClCompile Include="srcs\sound.cpp" />
     <ClCompile Include="srcs\util.cpp" />
     <ClCompile Include="srcs\zone.cpp" />
   </ItemGroup>
@@ -176,6 +177,7 @@
     <ClInclude Include="srcs\computer.h" />
     <ClInclude Include="srcs\number.h" />
     <ClInclude Include="srcs\panel.h" />
+    <ClInclude Include="srcs\sound.h" />
     <ClInclude Include="srcs\util.h" />
     <ClInclude Include="srcs\zone.h" />
   </ItemGroup>
