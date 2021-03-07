@@ -22,6 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetMouseDispFlag(TRUE);
 
+	// データ読み込みなど
 	if (!App::New()) return -1;
 
 	// メインループ

@@ -160,12 +160,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="srcs\answer.cpp" />
     <ClCompile Include="srcs\app.cpp" />
+    <ClCompile Include="srcs\computer.cpp" />
     <ClCompile Include="srcs\main.cpp" />
+    <ClCompile Include="srcs\number.cpp" />
+    <ClCompile Include="srcs\panel.cpp" />
+    <ClCompile Include="srcs\util.cpp" />
+    <ClCompile Include="srcs\zone.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="srcs\answer.h" />
     <ClInclude Include="srcs\app.h" />
     <ClInclude Include="srcs\common.h" />
+    <ClInclude Include="srcs\computer.h" />
+    <ClInclude Include="srcs\number.h" />
+    <ClInclude Include="srcs\panel.h" />
+    <ClInclude Include="srcs\util.h" />
+    <ClInclude Include="srcs\zone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

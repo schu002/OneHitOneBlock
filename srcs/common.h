@@ -15,4 +15,6 @@ typedef unsigned int	uint;
 #define	M_MIN(a,b)		((a)>(b)?(b):(a))
 #define	M_ABS(a)		((a)<0?-(a):a)
 
+typedef vector<int>		IntVector;
+
 #endif

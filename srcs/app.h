@@ -1,7 +1,9 @@
 #ifndef app_h
 #define app_h 1
 
-#include "common.h"
+#include "panel.h"
+#include "answer.h"
+#include "computer.h"
 
 class App
 {
@@ -26,7 +28,12 @@ private:
 
 private:
 	bool mFullMode;		// フルスクリーンモードかどうか
-	int mX, mY; // テスト用
+	bool mCompTurn;		// コンピュータの思考中かどうか
+	int mTurnCnt;		// ターン数
+	CenterPanel mPanel;	// 中央パネル
+	Answer mPlayer;		// プレーヤーの答え管理
+	Answer mComputer;	// コンピュータの答え管理
+	Computer mCompThink;	// コンピュータの思考用
 
 	static App *mMyself;
 };
