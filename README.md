@@ -1,5 +1,6 @@
 # OneHitOneBlock
 コンピュータとの１対１対戦の数字当てゲームです。
+![キャプチャ](https://user-images.githubusercontent.com/77147195/110266553-61427500-8001-11eb-8f56-933f5eecac97.PNG)
 
 ■ルール  
 ・最初に４桁の数字（ナンバー）を決めます。  
